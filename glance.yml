@@ -11,7 +11,7 @@ document:
 branding:
   custom-footer: |
     <p>CC24.DEV - IT-Forensik der Zukunft</p><br>
-    <p>Contributions Welcome! <a href="https://github.com/glanceapp/glance">Click here: Github</a></p>
+    <p>Contributions Welcome! <a href="https://github.com/overcuriousity/cc24-landing-page">Click here: Github</a></p>
   logo-url: https://cloud.cc24.dev/apps/theming/favicon/dashboard?v=4e09eb50
   favicon-url: https://cloud.cc24.dev/apps/theming/favicon/dashboard?v=4e09eb50
 
