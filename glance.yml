@@ -1,0 +1,1402 @@
+server:
+  # host: 0.0.0.0
+  # port: 8080
+  base-url: https://cc24.dev
+  assets-path: /home/svc-start-cc24/app/glance-assets
+
+document:
+  head: |
+    <meta name="description" content="CC24.DEV - IT-Forensik">
+
+branding:
+  custom-footer: |
+    <p>CC24.DEV - IT-Forensik der Zukunft</p><br>
+    <p>Contributions Welcome! <a href="https://github.com/glanceapp/glance">Click here: Github</a></p>
+  logo-url: https://cloud.cc24.dev/apps/theming/favicon/dashboard?v=4e09eb50
+  favicon-url: https://cloud.cc24.dev/apps/theming/favicon/dashboard?v=4e09eb50
+
+theme:
+  background-color: 186 21 20
+  contrast-multiplier: 1.2
+  primary-color: 97 13 80
+
+pages:
+  - name: "CC24"
+    width: wide
+    hide-desktop-navigation: false
+    center-vertically: false
+    columns:
+      - size: small
+        widgets:
+          - type: html
+            source: |
+              <div class="p-6 bg-opacity-20 bg-primary rounded mb-4">
+                <h1 class="size-h2 color-primary mb-2">CC24.DEV</h1>
+                <p class="size-h5">IT-Forensik Dashboard</p>
+                <p class="color-paragraph-faded mt-2">Last updated: March 4, 2025</p>
+              </div>
+              <br>
+              <br>
+          
+
+          
+          - type: clock
+            hour-format: 24h
+            
+          - type: bookmarks
+            groups:
+              - title: "Essential Resources"
+                color: 200 70 50
+                links:
+                  - title: CC24-Cloud/Daten_Studium1
+                    url: https://cloud.cc24.dev/f/344
+                    icon: https://cloud.cc24.dev/apps/theming/favicon/files?v=94ebd189
+                  - title: CC24-Cloud/Bibliothek
+                    url: https://cloud.cc24.dev/f/26615
+                    icon: https://cloud.cc24.dev/apps/theming/favicon/files?v=94ebd189
+                  - title: SANS Reading Room
+                    url: https://www.sans.org/reading-room/
+                    icon: si:pluralsight
+                  - title: Forensics Wiki
+                    url: https://forensics.wiki/
+                    icon: si:wikipedia
+              
+              - title: "Forensic Tools"
+                color: 130 80 60
+                links:
+                  - title: Autopsy
+                    url: https://www.autopsy.com/
+                    icon: si:sleuthkit
+                  - title: Volatility
+                    url: https://www.volatilityfoundation.org/
+                    icon: si:forensicswiki
+                  - title: KAPE
+                    url: https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+                    icon: si:kroll
+                  - title: VirusTotal
+                    url: https://www.virustotal.com/
+                    icon: si:virustotal
+      
+      - size: full
+        widgets:
+          - type: search
+            search-engine: https://se.mikoshi.de/searxng/search?q={QUERY}
+            new-tab: true
+            autofocus: true
+            placeholder: "SEARX-NG - bangs: !cve, !exploit, !gh, !yt"
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+              - title: CVE Database
+                shortcut: "!cve"
+                url: https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword={QUERY}
+              - title: ExploitDB
+                shortcut: "!exploit"
+                url: https://www.exploit-db.com/search?q={QUERY}
+              - title: GitHub
+                shortcut: "!gh"
+                url: https://github.com/search?q={QUERY}
+          - type: monitor
+            cache: 1m
+            title: "CC24 Core Services"
+            sites:
+              - title: CC24-Cloud - Files & Office
+                url: https://cloud.cc24.dev
+                icon: https://cloud.cc24.dev/apps/theming/favicon/dashboard?v=4e09eb50
+              - title: Matrix Chat
+                url: https://element.cc24.dev
+                icon: https://element.cc24.dev/vector-icons/apple-touch-icon-76.d115188.png
+              - title: CC24-MISP - Threat Intelligence
+                url: https://misp.cc24.dev
+                icon: https://misp.cc24.dev/img/favicon.png
+              - title: BitVault Secure Paste
+                url: https://bin.mikoshi.de/
+                icon: https://bin.mikoshi.de/static/favicon.ico
+              - title: Forum - IM AUFBAU
+                url: https://github.com/discourse/discourse
+                icon: si:discourse
+              - title: Sandbox - IM AUFBAU
+                url: https://github.com/cert-ee/cuckoo3
+                icon: si:github
+                
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: rss
+                title: "Security News"
+                style: vertical-list
+                thumbnail-height: 12
+                limit: 8
+                collapse-after: 5
+                feeds:
+                  - url: https://www.heise.de/security/feed.xml
+                    title: Heise Security
+                  - url: https://feeds.feedburner.com/TheHackersNews
+                    title: The Hacker News
+                  - url: https://krebsonsecurity.com/feed/
+                    title: Krebs on Security
+              
+              - type: videos
+                title: "DFIR YouTube"
+                style: vertical-list
+                limit: 10
+                collapse-after: 7
+                channels:
+                  - UCy8ntxFEudOCRZYT1f7ya9Q
+                  - UCc-bl6Z-Eqy1nC8N5aVl7zQ
+                  - UCwSo89W3KgPrid41vskBDYA
+                  - UCVeW9qkBjo3zosnqUbG7CFw
+                  - UCD4EOyXKjfDUhCI6jlOZZYQ
+              
+              - type: bookmarks
+                groups:
+                  - title: "University Resources"
+                    color: 210 80 60
+                    links:
+                      - title: HSMW Homepage
+                        url: https://hs.mw
+                        icon: si:internetarchive
+                      - title: Moodle
+                        url: https://learning.hs-mittweida.de/
+                        icon: si:moodle
+                      - title: Student Portal
+                        url: https://www.intranet.hs-mittweida.de/sportal
+                        icon: si:microsoftacademic
+                  
+                  - title: "Awesome Lists"
+                    color: 310 80 60
+                    links:
+                      - title: Awesome Forensics
+                        url: https://github.com/cugu/awesome-forensics
+                        icon: si:github
+                      - title: Awesome Privacy
+                        url: https://github.com/pluja/awesome-privacy
+                        icon: si:github
+                      - title: AboutDFIR
+                        url: https://aboutdfir.com
+                        icon: si:forensicswiki
+  - name: "DFIR Resources"
+    width: wide
+    columns:
+      - size: small
+        widgets:
+          - type: bookmarks
+            groups:
+              - title: "Essential Resources"
+                color: 210 80 60
+                links:
+                  - title: MITRE ATT&CK
+                    url: https://attack.mitre.org/
+                    icon: si:mitre
+                  - title: ForensicWiki
+                    url: https://forensicswiki.xyz/
+                    icon: si:wikipedia
+                  - title: AboutDFIR
+                    url: https://aboutdfir.com
+                    icon: si:forensicswiki
+                  - title: SANS DFIR Blog
+                    url: https://www.sans.org/blog/digital-forensics/
+                    icon: si:pluralsight
+                  - title: This Week In 4n6
+                    url: https://thisweekin4n6.com
+                  - title: NIST Digital Forensics
+                    url: https://www.nist.gov/itl/ssd/digital-forensics
+              
+              - title: "Reference Guides"
+                color: 130 80 60
+                links:
+                  - title: Awesome Forensics
+                    url: https://github.com/cugu/awesome-forensics
+                    icon: si:github
+                  - title: DFIR Review
+                    url: https://dfir.review/
+                  - title: OWASP Top 10
+                    url: https://owasp.org/www-project-top-ten/
+                    icon: si:owasp
+                  - title: Eric Zimmerman's Tools
+                    url: https://ericzimmerman.github.io/#!index.md
+                    icon: si:forensicswiki
+                  - title: Magnet Forensics
+                    url: https://www.magnetforensics.com/resources/
+                  - title: DFIR Training
+                    url: https://www.dfir.training/
+          
+          - type: bookmarks
+            groups:
+              - title: "Practice Challenges"
+                color: 280 70 60
+                links:
+                  - title: CyberDefenders
+                    url: https://cyberdefenders.org/blueteam-ctf-challenges/
+                    icon: si:cybersecurity
+                  - title: Honeynet Challenges
+                    url: https://www.honeynet.org/challenges/
+                  - title: Digital Corpora
+                    url: https://digitalcorpora.org/
+                  - title: DFRWS Challenges
+                    url: https://dfrws.org/forensic-challenges/
+                  - title: CTF Time
+                    url: https://ctftime.org/
+                    icon: si:hackthebox
+                  - title: MemLabs
+                    url: https://github.com/stuxnet999/MemLabs
+                    icon: si:github
+                    
+          - type: rss
+            title: "CVE Feeds"
+            feeds:
+              - url: https://cvefeed.io/rssfeed/latest.xml
+                title: Latest CVEs
+            limit: 10
+            collapse-after: 8
+            
+      - size: full
+        widgets:
+          - type: html
+            source: |
+              <div class="p-6 bg-opacity-10 bg-primary rounded mb-6">
+                <h1 class="size-h1 color-primary mb-2">DFIR Resources Dashboard</h1>
+                <p class="text-lg">Comprehensive collection of Digital Forensics & Incident Response resources, tools, and news</p>
+              </div>
+              
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: bookmarks
+                groups:
+                  - title: "Acquisition & Imaging"
+                    color: 190 70 60
+                    links:
+                      - title: FTK Imager
+                        url: https://www.exterro.com/digital-forensics-software/ftk-imager
+                      - title: Guymager
+                        url: https://guymager.sourceforge.io/
+                      - title: dc3dd/dcfldd
+                        url: https://sourceforge.net/projects/dc3dd/
+                      - title: DFIR ORC
+                        url: https://dfir-orc.github.io/
+                      - title: Velociraptor
+                        url: https://github.com/Velocidex/velociraptor
+                        icon: si:github
+                      - title: KAPE
+                        url: https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+                        icon: si:kroll
+              
+              - type: bookmarks
+                groups:
+                  - title: "Analysis Frameworks"
+                    color: 40 70 60
+                    links:
+                      - title: Autopsy
+                        url: https://www.autopsy.com/
+                        icon: si:sleuthkit
+                      - title: The Sleuth Kit
+                        url: https://github.com/sleuthkit/sleuthkit
+                        icon: si:github
+                      - title: Volatility
+                        url: https://www.volatilityfoundation.org/
+                        icon: si:forensicswiki
+                      - title: SIFT Workstation
+                        url: https://www.sans.org/tools/sift-workstation/
+                        icon: si:pluralsight
+                      - title: Rekall
+                        url: https://github.com/google/rekall
+                        icon: si:github
+                      - title: Timesketch
+                        url: https://github.com/google/timesketch
+                        icon: si:github
+              
+              - type: bookmarks
+                groups:
+                  - title: "Specialized Tools"
+                    color: 330 70 60
+                    links:
+                      - title: Bulk Extractor
+                        url: https://github.com/simsong/bulk_extractor
+                        icon: si:github
+                      - title: RegRipper
+                        url: https://github.com/keydet89/RegRipper3.0
+                        icon: si:github
+                      - title: PhotoRec
+                        url: https://www.cgsecurity.org/wiki/PhotoRec
+                      - title: Wireshark
+                        url: https://www.wireshark.org/
+                        icon: si:wireshark
+                      - title: NetworkMiner
+                        url: https://www.netresec.com/?page=NetworkMiner
+                      - title: Plaso
+                        url: https://github.com/log2timeline/plaso
+                        icon: si:github
+          
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: rss
+                title: "Digital Forensics News"
+                style: vertical-list
+                feeds:
+                  - url: https://medium.com/feed/tag/digital-forensics
+                    title: Medium - Digital Forensics
+                  - url: https://thisweekin4n6.wordpress.com/feed/
+                    title: This Week In 4n6
+                  - url: https://smarterforensics.com/feed/
+                    title: Smarter Forensics
+                limit: 8
+                collapse-after: 5
+                
+              - type: rss
+                title: "Threat Intelligence"
+                style: vertical-list
+                feeds:
+                  - url: https://unit42.paloaltonetworks.com/feed/
+                    title: Unit 42
+                  - url: https://aboutdfir.com/feed/
+                    title: AboutDFIR
+                limit: 8
+                collapse-after: 5
+                
+              - type: rss
+                title: "Tool Updates & Guides"
+                style: vertical-list
+                feeds:
+                  - url: https://www.sleuthkit.org/rss.xml
+                    title: The Sleuth Kit
+                  - url: https://medium.com/feed/tag/osint
+                    title: Medium - OSINT
+                  - url: https://inteltechniques.com/blog/feed/
+                    title: IntelTechniques Blog
+                  - url: https://www.magnetforensics.com/feed/
+                    title: Magnet Forensics
+                limit: 8
+                collapse-after: 5
+          
+          - type: split-column
+            max-columns: 2
+            widgets:
+              - type: custom-api
+                title: "MITRE ATT&CK Quick Reference"
+                cache: 1d
+                url: https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json
+                template: |
+                  <div class="collapsible-container" data-collapse-after="10">
+                    <div class="color-highlight size-h4 mb-2">Common Techniques</div>
+                    <ul class="list list-gap-5">
+                      {{ range .JSON.Array "objects" }}
+                        {{ if eq (.String "type") "attack-pattern" }}
+                          <li>
+                            <div class="flex justify-between">
+                              <span class="color-paragraph">{{ .String "name" }}</span>
+                              <span class="color-primary">{{ .String "external_references.0.external_id" }}</span>
+                            </div>
+                          </li>
+                        {{ end }}
+                      {{ end }}
+                    </ul>
+                  </div>
+                  
+              - type: bookmarks
+                groups:
+                  - title: "Mobile Forensics"
+                    color: 100 70 60
+                    links:
+                      - title: ALEAPP
+                        url: https://github.com/abrignoni/ALEAPP
+                        icon: si:github
+                      - title: iLEAPP
+                        url: https://github.com/abrignoni/iLEAPP
+                        icon: si:github
+                      - title: Andriller
+                        url: https://github.com/den4uk/andriller
+                        icon: si:github
+                      - title: MEAT
+                        url: https://github.com/jfarley248/MEAT
+                        icon: si:github
+                      - title: iOS Analyzer
+                        url: https://github.com/ydkhatri/ios_analyzer
+                        icon: si:github
+                      - title: MVT
+                        url: https://mvt.re/
+                  
+                  - title: "Memory Forensics"
+                    color: 100 70 60
+                    links:
+                      - title: Volatility
+                        url: https://www.volatilityfoundation.org/
+                        icon: si:forensicswiki
+                      - title: Rekall
+                        url: https://github.com/google/rekall
+                        icon: si:github
+                      - title: MemProcFS
+                        url: https://github.com/ufrisk/MemProcFS
+                        icon: si:github
+                      - title: LiME
+                        url: https://github.com/504ensicsLabs/LiME
+                        icon: si:github
+                      - title: Magnet RAM Capture
+                        url: https://www.magnetforensics.com/resources/magnet-ram-capture/
+                      
+      - size: small
+        widgets:
+          - type: html
+            source: |
+              <div class="p-4 bg-opacity-10 bg-primary rounded mb-4">
+                <h3 class="size-h3 color-highlight mb-3">Casey-Modell</h3>
+                <ol class="list-decimal pl-5">
+                  <li class="mb-2">Alarm oder Anschuldigung</li>
+                  <li class="mb-2">Güterabwägung</li>
+                  <li class="mb-2">Tatortsicherung</li>
+                  <li class="mb-2">Identifizierung/Beschlagnahme</li>
+                  <li class="mb-2">Sicherung</li>
+                  <li class="mb-2">Bergung</li>
+                  <li class="mb-2">Auswertung</li>
+                  <li class="mb-2">Reduktion</li>
+                  <li class="mb-2">Analyse</li>
+                  <li class="mb-2">Bericht</li>
+                  <li class="mb-2">Be- und Überzeugungen</li>
+                </ol>
+                <br>
+              </div>
+              
+          - type: bookmarks
+            groups:
+              - title: "OSINT Tools"
+                color: 30 70 60
+                links:
+                  - title: OSINT Framework
+                    url: https://osintframework.com/
+                  - title: Maltego
+                    url: https://www.maltego.com/
+                  - title: Shodan
+                    url: https://www.shodan.io/
+                    icon: si:shodan
+                  - title: theHarvester
+                    url: https://github.com/laramies/theHarvester
+                    icon: si:github
+                  - title: IntelTechniques
+                    url: https://inteltechniques.com/
+                  - title: SpiderFoot
+                    url: https://github.com/smicallef/spiderfoot
+                    icon: si:github
+                    
+          - type: bookmarks
+            groups:
+              - title: "Malware Analysis"
+                color: 10 80 60
+                links:
+                  - title: Cuckoo Sandbox
+                    url: https://cuckoosandbox.org/
+                  - title: CAPE Sandbox
+                    url: https://github.com/kevoreilly/CAPEv2
+                    icon: si:github
+                  - title: REMnux
+                    url: https://remnux.org/
+                  - title: FLOSS
+                    url: https://github.com/mandiant/flare-floss
+                    icon: si:github
+                  - title: VirusTotal
+                    url: https://www.virustotal.com/
+                    icon: si:virustotal
+                  - title: YARA
+                    url: https://virustotal.github.io/yara/
+                    icon: si:github
+                    
+          - type: reddit
+            title: "DFIR Communities"
+            subreddit: computerforensics
+            style: compact-list
+            show-thumbnails: false
+            show-flairs: false
+            limit: 5
+            collapse-after: 5
+
+  - name: "Forensic Toolbox"
+    width: wide
+    columns:
+      - size: full
+        widgets:
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: bookmarks
+                groups:
+                  - title: "Acquisition Tools"
+                    color: 150 70 60
+                    links:
+                      - title: FTK Imager
+                        url: https://www.exterro.com/digital-forensics-software/ftk-imager
+                      - title: dd/dc3dd/dcfldd
+                        url: https://sourceforge.net/projects/dc3dd/
+                      - title: Guymager
+                        url: https://guymager.sourceforge.io/
+                      - title: DFIR ORC
+                        url: https://dfir-orc.github.io/
+                      - title: Velociraptor
+                        url: https://github.com/Velocidex/velociraptor
+                        icon: si:github
+                      - title: AVML (Linux Memory)
+                        url: https://github.com/microsoft/avml
+                        icon: si:github
+                        
+              - type: bookmarks
+                groups:
+                  - title: "Analysis Frameworks"
+                    color: 200 70 60
+                    links:
+                      - title: Autopsy
+                        url: https://www.autopsy.com/
+                        icon: si:sleuthkit
+                      - title: The Sleuth Kit
+                        url: https://github.com/sleuthkit/sleuthkit
+                        icon: si:github
+                      - title: Volatility
+                        url: https://www.volatilityfoundation.org/
+                        icon: si:forensicswiki
+                      - title: Eric Zimmerman's Tools
+                        url: https://ericzimmerman.github.io/#!index.md
+                      - title: Rekall
+                        url: https://github.com/google/rekall
+                        icon: si:github
+                      - title: SIFT Workstation
+                        url: https://www.sans.org/tools/sift-workstation/
+                        icon: si:pluralsight
+                        
+              - type: bookmarks
+                groups:
+                  - title: "Specialized Tools"
+                    color: 250 70 60
+                    links:
+                      - title: KAPE
+                        url: https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
+                      - title: RegRipper
+                        url: https://github.com/keydet89/RegRipper3.0
+                        icon: si:github
+                      - title: Bulk Extractor
+                        url: https://github.com/simsong/bulk_extractor
+                        icon: si:github
+                      - title: PhotoRec
+                        url: https://www.cgsecurity.org/wiki/PhotoRec
+                      - title: Libewf
+                        url: https://github.com/libyal/libewf
+                        icon: si:github
+                      - title: Plaso
+                        url: https://github.com/log2timeline/plaso
+                        icon: si:github
+                        
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: bookmarks
+                groups:
+                  - title: "Mobile Forensics"
+                    color: 100 70 60
+                    links:
+                      - title: Andriller
+                        url: https://github.com/den4uk/andriller
+                        icon: si:github
+                      - title: ALEAPP
+                        url: https://github.com/abrignoni/ALEAPP
+                        icon: si:github
+                      - title: iLEAPP
+                        url: https://github.com/abrignoni/iLEAPP
+                        icon: si:github
+                      - title: MEAT
+                        url: https://github.com/jfarley248/MEAT
+                        icon: si:github
+                      - title: iOS Analyzer
+                        url: https://github.com/ydkhatri/ios_analyzer
+                        icon: si:github
+                      - title: MVT
+                        url: https://mvt.re/
+                        
+              - type: bookmarks
+                groups:
+                  - title: "Network & Memory Forensics"
+                    color: 320 70 60
+                    links:
+                      - title: Wireshark
+                        url: https://www.wireshark.org/
+                        icon: si:wireshark
+                      - title: NetworkMiner
+                        url: https://www.netresec.com/?page=NetworkMiner
+                      - title: Volatility
+                        url: https://www.volatilityfoundation.org/
+                      - title: Rekall
+                        url: https://github.com/google/rekall
+                        icon: si:github
+                      - title: MemProcFS
+                        url: https://github.com/ufrisk/MemProcFS
+                        icon: si:github
+                      - title: LiME
+                        url: https://github.com/504ensicsLabs/LiME
+                        icon: si:github
+                        
+              - type: bookmarks
+                groups:
+                  - title: "OSINT Tools"
+                    color: 30 70 60
+                    links:
+                      - title: OSINT Framework
+                        url: https://osintframework.com/
+                      - title: Maltego
+                        url: https://www.maltego.com/
+                      - title: Shodan
+                        url: https://www.shodan.io/
+                        icon: si:shodan
+                      - title: theHarvester
+                        url: https://github.com/laramies/theHarvester
+                        icon: si:github
+                      - title: Recon-ng
+                        url: https://github.com/lanmaster53/recon-ng
+                        icon: si:github
+                      - title: SpiderFoot
+                        url: https://github.com/smicallef/spiderfoot
+                        icon: si:github
+                        
+          - type: split-column
+            max-columns: 2
+            widgets:
+              - type: bookmarks
+                groups:
+                  - title: "Timeline & Case Management"
+                    color: 280 80 60
+                    links:
+                      - title: Timesketch
+                        url: https://github.com/google/timesketch
+                        icon: si:github
+                      - title: Plaso
+                        url: https://github.com/log2timeline/plaso
+                        icon: si:github
+                      - title: Timeline Explorer
+                        url: https://ericzimmerman.github.io/#!index.md
+                      - title: DFTimewolf
+                        url: https://github.com/log2timeline/dftimewolf
+                        icon: si:github
+                      - title: DFIR Track
+                        url: https://github.com/dfirtrack/dfirtrack
+                        icon: si:github
+                      - title: Catalyst
+                        url: https://github.com/SecurityBrewery/catalyst
+                        icon: si:github
+                      
+              - type: bookmarks
+                groups:
+                  - title: "Malware Analysis"
+                    color: 10 80 60
+                    links:
+                      - title: Cuckoo Sandbox
+                        url: https://github.com/cert-ee/cuckoo3
+                      - title: CAPE Sandbox
+                        url: https://github.com/kevoreilly/CAPEv2
+                        icon: si:github
+                      - title: REMnux
+                        url: https://remnux.org/
+                      - title: FLOSS
+                        url: https://github.com/mandiant/flare-floss
+                        icon: si:github
+                      - title: VirusTotal
+                        url: https://www.virustotal.com/
+                        icon: si:virustotal
+                      - title: YARA
+                        url: https://virustotal.github.io/yara/
+                        icon: si:github
+                        
+  - name: "Privacy Tools"
+    width: wide
+    columns:
+      - size: full
+        widgets:
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: bookmarks
+                groups:
+                  - title: "Privacy Essentials"
+                    color: 150 70 60
+                    links:
+                      - title: PrivacyGuides.org
+                        url: https://www.privacyguides.org/
+                        icon: si:privacyguides
+                      - title: Awesome Privacy
+                        url: https://github.com/pluja/awesome-privacy
+                        icon: si:github
+                      - title: EFF Privacy
+                        url: https://www.eff.org/issues/privacy
+                        icon: si:eff
+                      - title: TOSDR
+                        url: https://tosdr.org/
+                        icon: si:tosdr
+                      - title: Exodus Privacy
+                        url: https://reports.exodus-privacy.eu.org/
+                      - title: Privacy Tools
+                        url: https://www.privacytools.io/
+                        
+              - type: bookmarks
+                groups:
+                  - title: "Secure Communications"
+                    color: 200 70 60
+                    links:
+                      - title: Signal
+                        url: https://signal.org/
+                        icon: si:signal
+                      - title: Matrix/Element
+                        url: https://element.io/
+                        icon: si:matrix
+                      - title: ProtonMail
+                        url: https://proton.me/mail
+                        icon: si:protonmail
+                      - title: Tutanota
+                        url: https://tutanota.com/
+                        icon: si:tutanota
+                      - title: SimpleLogin
+                        url: https://simplelogin.io/
+                      - title: PGP/GPG Tools
+                        url: https://gnupg.org/
+                        icon: si:gnuprivacyguard
+                        
+              - type: bookmarks
+                groups:
+                  - title: "Privacy Browsers & Tools"
+                    color: 250 70 60
+                    links:
+                      - title: Firefox
+                        url: https://www.mozilla.org/firefox/
+                        icon: si:firefox
+                      - title: Tor Browser
+                        url: https://www.torproject.org/
+                        icon: si:torproject
+                      - title: Brave
+                        url: https://brave.com/
+                        icon: si:brave
+                      - title: uBlock Origin
+                        url: https://ublockorigin.com/
+                        icon: si:ublockorigin
+                      - title: Privacy Badger
+                        url: https://privacybadger.org/
+                        icon: si:eff
+                        
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: bookmarks
+                groups:
+                  - title: "Data Security"
+                    color: 100 70 60
+                    links:
+                      - title: Cryptomator
+                        url: https://cryptomator.org/
+                        icon: si:cryptomator
+                      - title: VeraCrypt
+                        url: https://www.veracrypt.fr/
+                        icon: si:veracrypt
+                      - title: KeePassXC
+                        url: https://keepassxc.org/
+                        icon: si:keepassxc
+                      - title: Bitwarden
+                        url: https://bitwarden.com/
+                        icon: si:bitwarden
+                      - title: Tails OS
+                        url: https://tails.net/
+                        icon: si:tails
+                      - title: Qubes OS
+                        url: https://www.qubes-os.org/
+                        icon: si:qubesos
+                        
+              - type: bookmarks
+                groups:
+                  - title: "Alternative Services"
+                    color: 320 70 60
+                    links:
+                      - title: Invidious (YouTube)
+                        url: https://invidious.io/
+                      - title: Nitter (Twitter)
+                        url: https://nitter.net/
+                      - title: LibreWolf
+                        url: https://librewolf.net/
+                        icon: si:librewolf
+                      - title: ProtonDrive
+                        url: https://proton.me/drive
+                        icon: si:protonmail
+                      - title: Nextcloud
+                        url: https://nextcloud.com/
+                        icon: si:nextcloud
+                      - title: OpenStreetMap
+                        url: https://www.openstreetmap.org/
+                        icon: si:openstreetmap
+                        
+              - type: bookmarks
+                groups:
+                  - title: "Privacy Resources"
+                    color: 30 70 60
+                    links:
+                      - title: r/Privacy
+                        url: https://www.reddit.com/r/privacy/
+                        icon: si:reddit
+                      - title: GDPR Info
+                        url: https://gdpr.eu/
+                        icon: si:europeanunion
+                      - title: Surveillance Self-Defense
+                        url: https://ssd.eff.org/
+                        icon: si:eff
+                      - title: Privacy Not Included
+                        url: https://foundation.mozilla.org/privacynotincluded/
+                        icon: si:mozilla
+                      - title: Techlore
+                        url: https://techlore.tech/
+                      - title: The Hitchhiker's Guide to Online Anonymity
+                        url: https://anonymousplanet.org/
+                        
+          - type: rss
+            title: "Privacy News"
+            style: horizontal-cards
+            thumbnail-height: 12
+            card-height: 30
+            limit: 15
+            feeds:
+              - url: https://www.eff.org/rss/updates.xml
+                title: EFF Updates
+              - url: https://proton.me/blog/feed
+                title: Proton Blog
+              - url: https://www.privacyguides.org/feed_rss_created.xml
+                title: PrivacyGuides
+  - name: "Linux Cheatsheet"
+    width: wide
+    columns:
+      - size: small
+        widgets:
+          - type: bookmarks
+            groups:
+              - title: "Linux-Dateisystem"
+                color: 150 80 60
+                links:
+                  - title: "/bin/ - Systembefehle"
+                    url: "#"
+                  - title: "/boot/ - Kernel & Bootloader"
+                    url: "#"
+                  - title: "/dev/ - Gerätedateien"
+                    url: "#"
+                  - title: "/etc/ - Konfigurationsdateien"
+                    url: "#"
+                  - title: "/home/ - Benutzerverzeichnisse"
+                    url: "#"
+                  - title: "/lib/ - Bibliotheken"
+                    url: "#"
+                  - title: "/media/ - Ext. Speichermedien"
+                    url: "#"
+                  - title: "/mnt/ - Temp. Einhängepunkte"
+                    url: "#"
+                  - title: "/opt/ - Optionale Pakete"
+                    url: "#"
+                  - title: "/proc/ - Prozessinformationen"
+                    url: "#"
+                  - title: "/root/ - Root-Verzeichnis"
+                    url: "#"
+                  - title: "/sbin/ - Admin-Programme"
+                    url: "#"
+                  - title: "/sys/ - Kernel-Informationen"
+                    url: "#"
+                  - title: "/tmp/ - Temporäre Dateien"
+                    url: "#"
+                  - title: "/usr/ - User-Programme"
+                    url: "#"
+                  - title: "/var/ - Variable Daten, Logs"
+                    url: "#"
+          
+          - type: bookmarks
+            groups:
+              - title: "Pfade & Shortcuts"
+                color: 220 80 60
+                links:
+                  - title: "~ (Home-Verzeichnis)"
+                    url: "#"
+                  - title: ". (Aktuelles Verzeichnis)"
+                    url: "#"
+                  - title: ".. (Übergeordnetes Verzeichnis)"
+                    url: "#"
+                  - title: "- (Vorheriges Verzeichnis)"
+                    url: "#"
+                  - title: "/ (Root-Verzeichnis)"
+                    url: "#"
+                  - title: "$PATH (Systemvariable)"
+                    url: "#"
+              
+              - title: "Pfadtypen"
+                color: 220 80 60
+                links:
+                  - title: "Absolute Pfade - /home/user/Documents"
+                    url: "#"
+                  - title: "Relative Pfade - ./Documents"
+                    url: "#"
+      
+      - size: full
+        widgets:
+          - type: html
+            source: |
+              <div class="p-6 bg-opacity-10 bg-primary rounded mb-6">
+                <h1 class="size-h1 color-primary mb-4">Linux Basics & Terminal Cheatsheet</h1>
+                <p>Eine Übersicht wichtiger Linux-Befehle, Dateisystemstrukturen und Terminal-Shortcuts für die IT-Forensik</p>
+              </div>
+          
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Terminal-Bedienung</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+C</td>
+                          <td class="pb-2">Aktuellen Prozess abbrechen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+L</td>
+                          <td class="pb-2">Bildschirm leeren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Tab</td>
+                          <td class="pb-2">Autovervollständigung</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+Shift+C</td>
+                          <td class="pb-2">Text kopieren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+Shift+V</td>
+                          <td class="pb-2">Text einfügen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+R</td>
+                          <td class="pb-2">Befehlsverlauf durchsuchen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+A</td>
+                          <td class="pb-2">Zum Zeilenanfang springen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+E</td>
+                          <td class="pb-2">Zum Zeilenende springen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+U</td>
+                          <td class="pb-2">Zeile vor Cursor löschen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">Strg+K</td>
+                          <td class="pb-2">Zeile nach Cursor löschen</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Navigation</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">pwd</td>
+                          <td class="pb-2">Aktuelles Verzeichnis anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">cd [Verzeichnis]</td>
+                          <td class="pb-2">Verzeichnis wechseln</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">cd ..</td>
+                          <td class="pb-2">Ein Verzeichnis nach oben</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">cd ~</td>
+                          <td class="pb-2">Zum Home-Verzeichnis</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ls</td>
+                          <td class="pb-2">Verzeichnisinhalt auflisten</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ls -l</td>
+                          <td class="pb-2">Detaillierte Auflistung</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ls -a</td>
+                          <td class="pb-2">Auch versteckte Dateien zeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ls -h</td>
+                          <td class="pb-2">Größen menschenlesbar anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ls -R</td>
+                          <td class="pb-2">Rekursive Auflistung</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Dateioperationen</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">cp [Quelle] [Ziel]</td>
+                          <td class="pb-2">Dateien/Verzeichnisse kopieren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">cp -r</td>
+                          <td class="pb-2">Rekursives Kopieren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">rm [Datei]</td>
+                          <td class="pb-2">Dateien löschen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">rm -r</td>
+                          <td class="pb-2">Rekursives Löschen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">rm -f</td>
+                          <td class="pb-2">Forciertes Löschen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">mv [Quelle] [Ziel]</td>
+                          <td class="pb-2">Dateien verschieben/umbenennen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">mkdir [Verzeichnis]</td>
+                          <td class="pb-2">Verzeichnis erstellen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">touch [Datei]</td>
+                          <td class="pb-2">Leere Datei erstellen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">chmod</td>
+                          <td class="pb-2">Zugriffsrechte ändern</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">chown</td>
+                          <td class="pb-2">Besitzer ändern</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Suchen & Finden</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">find [Pfad] [Optionen]</td>
+                          <td class="pb-2">Dateien suchen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">find . -name "*.txt"</td>
+                          <td class="pb-2">Alle .txt Dateien finden</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">find . -type d</td>
+                          <td class="pb-2">Nur Verzeichnisse finden</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">grep [Muster] [Datei]</td>
+                          <td class="pb-2">Text in Dateien suchen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">grep -r</td>
+                          <td class="pb-2">Rekursive Suche</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">grep -i</td>
+                          <td class="pb-2">Groß-/Kleinschreibung ignorieren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">locate [Datei]</td>
+                          <td class="pb-2">Schnelle Dateisuche (Datenbank)</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">which [Befehl]</td>
+                          <td class="pb-2">Pfad eines Befehls finden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Textverarbeitung</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">nano [Datei]</td>
+                          <td class="pb-2">Einfacher Texteditor</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">vim [Datei]</td>
+                          <td class="pb-2">Fortgeschrittener Texteditor</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">echo [Text]</td>
+                          <td class="pb-2">Text ausgeben</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">cat [Datei]</td>
+                          <td class="pb-2">Dateiinhalt anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">less [Datei]</td>
+                          <td class="pb-2">Datei seitenweise anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">head [Datei]</td>
+                          <td class="pb-2">Erste Zeilen anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">tail [Datei]</td>
+                          <td class="pb-2">Letzte Zeilen anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">tail -f</td>
+                          <td class="pb-2">Datei kontinuierlich überwachen</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Operatoren</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">&</td>
+                          <td class="pb-2">Prozess im Hintergrund ausführen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">&&</td>
+                          <td class="pb-2">Befehl nur wenn vorheriger erfolgreich</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">||</td>
+                          <td class="pb-2">Befehl nur wenn vorheriger fehlgeschlagen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">|</td>
+                          <td class="pb-2">Output als Input für nächsten Befehl</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">></td>
+                          <td class="pb-2">Output in Datei umleiten (überschreiben)</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">>></td>
+                          <td class="pb-2">Output an Datei anhängen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary"><</td>
+                          <td class="pb-2">Input aus Datei lesen</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+          - type: split-column
+            max-columns: 3
+            widgets:
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Paketverwaltung (apt)</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt update</td>
+                          <td class="pb-2">Paketlisten aktualisieren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt upgrade</td>
+                          <td class="pb-2">Installierte Pakete aktualisieren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt search [Paket]</td>
+                          <td class="pb-2">Nach Paketen suchen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt install [Paket]</td>
+                          <td class="pb-2">Paket installieren</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt remove [Paket]</td>
+                          <td class="pb-2">Paket entfernen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt autoremove</td>
+                          <td class="pb-2">Nicht mehr benötigte Pakete entfernen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt list --installed</td>
+                          <td class="pb-2">Installierte Pakete auflisten</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">apt show [Paket]</td>
+                          <td class="pb-2">Paketinformationen anzeigen</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Systeminformationen</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">uname -a</td>
+                          <td class="pb-2">Kernel-Version anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">lsb_release -a</td>
+                          <td class="pb-2">Distributionsinformationen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">df -h</td>
+                          <td class="pb-2">Festplattennutzung</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">free -h</td>
+                          <td class="pb-2">Arbeitsspeichernutzung</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">top</td>
+                          <td class="pb-2">Prozessübersicht</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">htop</td>
+                          <td class="pb-2">Erweiterte Prozessübersicht</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ps aux</td>
+                          <td class="pb-2">Prozessliste</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+              - type: html
+                source: |
+                  <div class="p-4 bg-opacity-10 bg-primary rounded">
+                    <h3 class="size-h3 color-highlight mb-3">Netzwerk</h3>
+                    <table class="w-full">
+                      <tbody>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ip a</td>
+                          <td class="pb-2">Netzwerkschnittstellen anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ping [Host]</td>
+                          <td class="pb-2">Verbindung testen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">netstat -tuln</td>
+                          <td class="pb-2">Offene Ports anzeigen</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">ss</td>
+                          <td class="pb-2">Socket-Statistiken</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">curl [URL]</td>
+                          <td class="pb-2">HTTP-Anfragen senden</td>
+                        </tr>
+                        <tr>
+                          <td class="pb-2 pr-2 font-semibold color-primary">wget [URL]</td>
+                          <td class="pb-2">Dateien herunterladen</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+      - size: small
+        widgets:
+          - type: html
+            source: |
+              <div class="p-4 bg-opacity-10 bg-primary rounded">
+                <h3 class="size-h3 color-highlight mb-3">Linux-Dateisystem</h3>
+                <div class="font-mono text-sm pl-2">
+                  /
+                  <br/>├── bin/
+                  <br/>├── boot/
+                  <br/>├── dev/
+                  <br/>├── etc/
+                  <br/>├── home/
+                  <br/>│   └── &lt;userX&gt;/
+                  <br/>│       ├── Desktop/
+                  <br/>│       ├── Documents/
+                  <br/>│       ├── Downloads/
+                  <br/>│       ├── Music/
+                  <br/>│       ├── Pictures/
+                  <br/>│       ├── .bash_history
+                  <br/>│       ├── .cache/
+                  <br/>│       ├── .config/
+                  <br/>│       └── .local/
+                  <br/>│   └── &lt;userY&gt;/
+                  <br/>│       ├── Desktop/
+                  <br/>│       └── .../
+                  <br/>├── lib/
+                  <br/>├── media/
+                  <br/>├── mnt/
+                  <br/>├── opt/
+                  <br/>├── proc/
+                  <br/>├── root/
+                  <br/>├── sbin/
+                  <br/>├── sys/
+                  <br/>├── tmp/
+                  <br/>├── usr/
+                  <br/>└── var/
+                </div>
+              </div>
+              
+          - type: html
+            source: |
+              <div class="p-4 bg-opacity-10 bg-primary rounded mt-4">
+                <h3 class="size-h3 color-highlight mb-3">Forensische Bedeutung</h3>
+                <p class="text-sm mb-2"><span class="font-semibold color-primary">/home/</span> - Hauptquelle für Benutzeraktivitäten, versteckte Dateien und persönliche Daten</p>
+                <p class="text-sm mb-2"><span class="font-semibold color-primary">/var/</span> - Enthält kritische Logdateien für die forensische Analyse</p>
+                <p class="text-sm mb-2"><span class="font-semibold color-primary">/etc/</span> - Zentral für die Analyse von Systemkonfigurationsänderungen</p>
+                <p class="text-sm mb-2"><span class="font-semibold color-primary">/tmp/</span> - Oft eine Goldgrube für temporäre Daten von Interesse</p>
+                <p class="text-sm mb-2"><span class="font-semibold color-primary">/root/</span> - Enthält kritische administrative Aktivitäten</p>
+                <p class="text-sm mb-2"><span class="font-semibold color-primary">/boot/</span> - Änderungen hier können auf Root-Kits hindeuten</p>
+                <p class="text-sm mb-2"><span class="font-semibold color-primary">/bin/ & /sbin/</span> - Modifikationen können auf Systemmanipulationen hinweisen</p>
+              </div>
+              
+          - type: bookmarks
+            groups:
+              - title: "Wichtige Befehle für die Forensik"
+                color: 0 80 60
+                links:
+                  - title: "find - Dateien nach Kriterien suchen"
+                    url: "#"
+                  - title: "grep - Text in Dateien finden"
+                    url: "#"
+                  - title: "dd - Festplatten-Imaging"
+                    url: "#"
+                  - title: "ls -la - Alle Details von Dateien"
+                    url: "#"
+                  - title: "chmod/chown - Rechte analysieren"
+                    url: "#"
+                  - title: "cat/less - Dateiinhalte anzeigen"
+                    url: "#"
+                  - title: "tail -f - Logs überwachen"
+                    url: "#"
