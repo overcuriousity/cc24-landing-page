@@ -33,13 +33,10 @@ pages:
               <div class="p-6 bg-opacity-20 bg-primary rounded mb-4">
                 <h1 class="size-h2 color-primary mb-2">CC24.DEV</h1>
                 <p class="size-h5">IT-Forensik Dashboard</p>
-                <p class="color-paragraph-faded mt-2">Last updated: March 4, 2025</p>
+                <p class="color-paragraph-faded mt-2">Last updated: March 12, 2025</p>
               </div>
               <br>
-              <br>
-          
-
-          
+              
           - type: clock
             hour-format: 24h
             
@@ -49,7 +46,7 @@ pages:
                 color: 200 70 50
                 links:
                   - title: CC24-Cloud/Daten_Studium1
-                    url: https://cloud.cc24.dev/f/344
+                    url: https://cloud.cc24.dev/apps/files/folders/24201?dir=/Daten_StudiumI
                     icon: https://cloud.cc24.dev/apps/theming/favicon/files?v=94ebd189
                   - title: CC24-Cloud/Bibliothek
                     url: https://cloud.cc24.dev/f/26615
@@ -60,22 +57,43 @@ pages:
                   - title: Forensics Wiki
                     url: https://forensics.wiki/
                     icon: si:wikipedia
-              
-              - title: "Forensic Tools"
-                color: 130 80 60
+                  
+              - title: "University Resources"
+                color: 210 80 60
                 links:
-                  - title: Autopsy
-                    url: https://www.autopsy.com/
-                    icon: si:sleuthkit
-                  - title: Volatility
-                    url: https://www.volatilityfoundation.org/
-                    icon: si:forensicswiki
-                  - title: KAPE
-                    url: https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
-                    icon: si:kroll
-                  - title: VirusTotal
-                    url: https://www.virustotal.com/
-                    icon: si:virustotal
+                  - title: HSMW Homepage
+                    url: https://hs.mw
+                    icon: https://www.hs-mittweida.de/favicon.ico
+                  - title: Moodle
+                    url: https://learning.hs-mittweida.de/
+                    icon: https://www.hs-mittweida.de/favicon.ico
+                  - title: Student Portal
+                    url: https://www.intranet.hs-mittweida.de/sportal
+                    icon: https://www.hs-mittweida.de/favicon.ico
+                  - title: Springer Link
+                    url: http://link.springer.com/
+                    icon: https://link.springer.com/oscar-static/img/favicons/darwin/favicon-16x16-ed57f42bd2.png
+
+          - type: html
+            source: |
+              <div class="p-4 bg-opacity-10 bg-primary rounded mb-4">
+              <br>
+                <h3 class="size-h3 color-highlight mb-3">Casey-Modell</h3>
+                <ol class="list-decimal pl-5">
+                  <li class="mb-2">Alarm oder Anschuldigung</li>
+                  <li class="mb-2">Güterabwägung</li>
+                  <li class="mb-2">Tatortsicherung</li>
+                  <li class="mb-2">Identifizierung/Beschlagnahme</li>
+                  <li class="mb-2">Sicherung</li>
+                  <li class="mb-2">Bergung</li>
+                  <li class="mb-2">Auswertung</li>
+                  <li class="mb-2">Reduktion</li>
+                  <li class="mb-2">Analyse</li>
+                  <li class="mb-2">Bericht</li>
+                  <li class="mb-2">Be- und Überzeugungen</li>
+                </ol>
+                <br>
+              </div>
       
       - size: full
         widgets:
@@ -97,6 +115,7 @@ pages:
               - title: GitHub
                 shortcut: "!gh"
                 url: https://github.com/search?q={QUERY}
+                
           - type: monitor
             cache: 1m
             title: "CC24 Core Services"
@@ -121,14 +140,14 @@ pages:
                 icon: si:github
                 
           - type: split-column
-            max-columns: 3
+            max-columns: 2
             widgets:
               - type: rss
                 title: "Security News"
                 style: vertical-list
                 thumbnail-height: 12
-                limit: 8
-                collapse-after: 5
+                limit: 12
+                collapse-after: 8
                 feeds:
                   - url: https://www.heise.de/security/feed.xml
                     title: Heise Security
@@ -136,33 +155,23 @@ pages:
                     title: The Hacker News
                   - url: https://krebsonsecurity.com/feed/
                     title: Krebs on Security
-              
-              - type: videos
-                title: "DFIR YouTube"
-                style: vertical-list
-                limit: 10
-                collapse-after: 7
-                channels:
-                  - UCy8ntxFEudOCRZYT1f7ya9Q
-                  - UCc-bl6Z-Eqy1nC8N5aVl7zQ
-                  - UCwSo89W3KgPrid41vskBDYA
-                  - UCVeW9qkBjo3zosnqUbG7CFw
-                  - UCD4EOyXKjfDUhCI6jlOZZYQ
-              
+                  - url: https://isc.sans.edu/rssfeed.xml
+                    title: SANS Internet Storm Center
+                    
               - type: bookmarks
                 groups:
-                  - title: "University Resources"
-                    color: 210 80 60
+                  - title: "Forensic Tools"
+                    color: 130 80 60
                     links:
-                      - title: HSMW Homepage
-                        url: https://hs.mw
-                        icon: si:internetarchive
-                      - title: Moodle
-                        url: https://learning.hs-mittweida.de/
-                        icon: si:moodle
-                      - title: Student Portal
-                        url: https://www.intranet.hs-mittweida.de/sportal
-                        icon: si:microsoftacademic
+                      - title: Autopsy
+                        url: https://www.autopsy.com/
+                        icon: https://www.autopsy.com/favicons/favicon-16x16.png
+                      - title: Volatility
+                        url: https://www.volatilityfoundation.org/
+                        icon: https://volatilityfoundation.org/wp-content/uploads/2023/11/IMG_6301-150x150.png?crop=1
+                      - title: VirusTotal
+                        url: https://www.virustotal.com/
+                        icon: si:virustotal
                   
                   - title: "Awesome Lists"
                     color: 310 80 60
@@ -175,7 +184,20 @@ pages:
                         icon: si:github
                       - title: AboutDFIR
                         url: https://aboutdfir.com
-                        icon: si:forensicswiki
+                        icon: https://aboutdfir.com/wp-content/uploads/cropped-android-chrome-512x512-1-192x192.png
+
+      - size: small
+        widgets:
+          - type: rss
+            title: "CVE Feeds"
+            feeds:
+              - url: https://cvefeed.io/rssfeed/latest.xml
+                title: Latest CVEs
+            limit: 8
+            collapse-after: 6
+            
+
+
   - name: "DFIR Resources"
     width: wide
     columns:
@@ -194,7 +216,7 @@ pages:
                     icon: si:wikipedia
                   - title: AboutDFIR
                     url: https://aboutdfir.com
-                    icon: si:forensicswiki
+                    icon: https://aboutdfir.com/wp-content/uploads/cropped-android-chrome-512x512-1-192x192.png
                   - title: SANS DFIR Blog
                     url: https://www.sans.org/blog/digital-forensics/
                     icon: si:pluralsight
@@ -216,7 +238,7 @@ pages:
                     icon: si:owasp
                   - title: Eric Zimmerman's Tools
                     url: https://ericzimmerman.github.io/#!index.md
-                    icon: si:forensicswiki
+                    icon: si:github
                   - title: Magnet Forensics
                     url: https://www.magnetforensics.com/resources/
                   - title: DFIR Training
@@ -279,9 +301,6 @@ pages:
                       - title: Velociraptor
                         url: https://github.com/Velocidex/velociraptor
                         icon: si:github
-                      - title: KAPE
-                        url: https://www.kroll.com/en/services/cyber-risk/incident-response-litigation-support/kroll-artifact-parser-extractor-kape
-                        icon: si:kroll
               
               - type: bookmarks
                 groups:
@@ -290,13 +309,13 @@ pages:
                     links:
                       - title: Autopsy
                         url: https://www.autopsy.com/
-                        icon: si:sleuthkit
+                        icon: https://www.autopsy.com/favicons/favicon-16x16.png
                       - title: The Sleuth Kit
                         url: https://github.com/sleuthkit/sleuthkit
                         icon: si:github
                       - title: Volatility
                         url: https://www.volatilityfoundation.org/
-                        icon: si:forensicswiki
+                        icon: https://volatilityfoundation.org/wp-content/uploads/2023/11/IMG_6301-150x150.png?crop=1
                       - title: SIFT Workstation
                         url: https://www.sans.org/tools/sift-workstation/
                         icon: si:pluralsight
@@ -423,7 +442,7 @@ pages:
                     links:
                       - title: Volatility
                         url: https://www.volatilityfoundation.org/
-                        icon: si:forensicswiki
+                        icon: https://volatilityfoundation.org/wp-content/uploads/2023/11/IMG_6301-150x150.png?crop=1
                       - title: Rekall
                         url: https://github.com/google/rekall
                         icon: si:github
@@ -545,13 +564,13 @@ pages:
                     links:
                       - title: Autopsy
                         url: https://www.autopsy.com/
-                        icon: si:sleuthkit
+                        icon: https://www.autopsy.com/favicons/favicon-16x16.png
                       - title: The Sleuth Kit
                         url: https://github.com/sleuthkit/sleuthkit
                         icon: si:github
                       - title: Volatility
                         url: https://www.volatilityfoundation.org/
-                        icon: si:forensicswiki
+                        icon: https://volatilityfoundation.org/wp-content/uploads/2023/11/IMG_6301-150x150.png?crop=1
                       - title: Eric Zimmerman's Tools
                         url: https://ericzimmerman.github.io/#!index.md
                       - title: Rekall
